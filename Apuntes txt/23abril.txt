@@ -1,0 +1,11 @@
+**Shared memory**
+- OS assigns memory to each proccess
+- Fastest wat to communicate processes
+- Request memory segment to the OS
+- OS gives to the process a segment memory
+    - shmget(key_t, size_t, int shmflg)
+    - shmat(int shmid, const void*shmaddr, int shmflg)
+    - shmdt(const void *shmaddr)
+    - shmctl()
+
+

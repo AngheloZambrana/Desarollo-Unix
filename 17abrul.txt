@@ -1,0 +1,9 @@
+Files
+- File Descirption
+- File descriptor
+- operations
+    - open()
+    - read()
+    - wrte()
+- options at time to open
+    - 0_ROONLY, 0_WRONLY, 0_TRUNC, 0_APPEND, 0_CREAT

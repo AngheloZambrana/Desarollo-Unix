@@ -1,0 +1,73 @@
+What is a process
+
+A proess is a simply a program in execution. One program strictly has at least one process associated with it
+
+Ejemplo:
+
+-> OS primero se lanza un boot que es un procedimiento que aun no se inicia en el sistema operatvo
+Despues se genera el procedimiento iniciall init y otros procesos al iniciar un sistema operativo y despues de iniciar todos los procesos se muestra el dektop
+Cada procesos tiee un identificador 
+
+Representacion del ejemplo:
+
+-> OS
+   |-> boot <-
+   |-> init           <- PID           1 (Este es su identificador)
+      |-> Procesos I/O                 2
+      |-> Procesos Renderizado         3
+      |-> Procesos Display             10 
+      |-> Desktop                      300
+       |-> Firefox
+         |-> Tab 1
+
+El comando ps tiene disntos parametros com el -fe que le puede pedir que usuarios han inicializado ciertor procesos en espaciales
+pstree te muestra un arbol de procesos
+
+Utilities to manage process on Unix
+- List and manage process
+    - ps
+    - kill
+- Background and bring it  bck
+    - Ctrl + z
+    - bg: Se podía guardar un proceso en el background y volver a sacarlo
+    - & 
+
+/dev/null == Basurero :D
+Representa NADA, así que va descartando lo que se le manda, ayudando a no generar bulla. (No envíes cosas importantes)
+
+Process Identifier
+
+- PID
+- PPID
+- fork: Crea un sub proceso cuyo padre es el padre en el que lo estamos añadiendo
+- child process
+
+Para difnir un PID con un valor int <- 32 bit
+Typedf int pid_t
+y la proxima vez que se llame en el sistema pit_t el sistema ya sabe que es un valor int
+
+Tarea:
+ - Que otros procesos parecidos a wait existen ¿?
+
+ 0 funciones y mecanismos relacionados con la sincronización y espera de procesos en C, junto con una breve descripción de cómo funcionan y en qué se parecen a la función wait():
+
+    waitpid(): Esta función permite a un proceso padre esperar a que un proceso hijo específico termine su ejecución. Se parece a wait() en el sentido de que ambos esperan la terminación de un proceso hijo, pero waitpid() proporciona más control al permitir especificar el PID del proceso hijo a esperar.
+
+    wait3() y wait4(): Son variantes más antiguas de waitpid() que proporcionan una funcionalidad similar pero con menos opciones de control.
+
+    waitid(): Similar a waitpid(), pero proporciona una interfaz más avanzada para esperar a que un proceso hijo termine. Permite esperar a un proceso hijo específico y proporciona más información sobre el estado de terminación del proceso hijo.
+
+    join() en pthreads: En el contexto de programación con hilos en C (usando la biblioteca pthreads), la función pthread_join() se utiliza para que un hilo espere la finalización de otro hilo. Es similar a wait() en el sentido de que un hilo espera la finalización de otro hilo, similar a cómo un proceso espera la finalización de un proceso hijo.
+
+    sleep(): Esta función pausa la ejecución de un proceso durante un período específico de tiempo. Aunque no está directamente relacionada con la espera de procesos hijos, se puede usar para realizar una espera temporal similar a wait().
+
+    Mutex y semáforos: Estos son mecanismos de sincronización utilizados para coordinar el acceso a recursos compartidos entre varios procesos o hilos. Aunque no están directamente relacionados con la espera de procesos hijos, se pueden utilizar para coordinar la ejecución de procesos de manera que un proceso espere a que otro proceso complete cierta tarea antes de continuar.
+
+    Variables de condición: También utilizadas en programación con hilos, las variables de condición son parte del mecanismo de sincronización que permite a los hilos esperar hasta que se cumpla una condición específica antes de continuar. Similar a los mutex y semáforos, aunque no están directamente relacionadas con la espera de procesos hijos, pueden usarse para coordinar la ejecución de procesos de manera similar a wait().
+
+    Espera no bloqueante: Aunque no es una función específica, la espera no bloqueante implica realizar una espera sin bloquear la ejecución del proceso. Esto se puede lograr utilizando mecanismos como la función select() o poll() para esperar la disponibilidad de datos en un descriptor de archivo sin suspender la ejecución del proceso.
+
+    waitqueue en el kernel de Linux: En el desarrollo del kernel de Linux, se utilizan waitqueues para permitir que los procesos esperen a que ocurran ciertos eventos o condiciones antes de continuar su ejecución. Se parecen a wait() en el sentido de que permiten a un proceso esperar a que ocurra algo antes de continuar su ejecución.
+
+    Barriers en OpenMP: En el contexto de la programación paralela con OpenMP, las barreras (#pragma omp barrier) se utilizan para sincronizar hilos en un punto específico del código. Similar a wait(), una barrera permite a los hilos esperar a que otros hilos alcancen un punto de sincronización antes de continuar.
+

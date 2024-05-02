@@ -1,0 +1,27 @@
+Threads (pthread)
+
+- Similar to a different process
+- Lightweight
+- Share resources
+- Improve execution by parallelism
+- faster context switch
+- Communication between threads are faster
+
+
+https://www.um.es/earlyadopters/actividades/a3/PCD_Activity3_Session1.pdf
+
+POSIX threads - pthreads
+
+- C has not a standard library for threads
+- POSIX specification for threads
+- thread library base on the standars
+- unique thread ID
+
+https://www.cs.cmu.edu/afs/cs/academic/class/15492-f07/www/pthreads.html
+
+GCC pthreads
+- Require additional library
+    - Ipthread
+- int pthread_create(pthread_t*thread, pthread_attr_t*attr.void*(*start_routine)(void*).void*arg)
+- int pthread_join(pthread_t thread.void **retval)
+- returns 0 for success, another integer positve otherwise

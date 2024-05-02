@@ -1,0 +1,19 @@
+Sockets 
+-Another way to communicate two or more processes
+- It can be UNIX Domain Sockets
+- TCD/UDP Sockets
+
+Unix Domain Sockets
+- An IPC between processes 
+- Unnamed Sockets
+- bound to the filesystem path
+- types
+    - SOCK_STREAM, stream oriented socket, reliable(TCP)
+    - SOCK:DGRAM, datagram oriented socket, non-reliable(UDP)
+
+TCD/UDP Sockets (AF_INET)
+
+- to communicate processes no matter where they are running
+- it uses file descriptors
+- base for client server architecture
+
