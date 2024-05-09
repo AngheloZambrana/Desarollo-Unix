@@ -1,0 +1,21 @@
+Puede que tengamos varios argumntos
+(Incluso en los utilizarios del sistema ejemplo el cat necesitamos un archivo
+)Muchos programas si le pones un --help te muestra una ayuda :0
+
+Atoi busca por orden de la cadena todos lo snumeros ejeplso
+atoi("1234") = 1234
+("12v3b3") = 123
+("abc") = 0
+
+OS Space
+
+Kernel Mode
+- OS Kernel has its own memory Space
+- User space does not have direct access to jernel space
+- Kernel offers an API to interaxt with user programs
+
+How to run application on Kernel space
+- kernel APIs
+- Switch user program to kernel space with syscall
+- run inside of kernel as a kernel module
+
